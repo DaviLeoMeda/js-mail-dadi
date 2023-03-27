@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsMail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="bg-cardinal text-center h-100">
+        <h1> Chi vuol essere tra i Milionari?</h1>
+
+
+        <div class="card container text-center">
+            <div class="card-header">
+                <p class="text-black fs-4">Vediamo se la tua mail risulta tra i prescelti alla festa!</p>
+            </div>
+
+            <div class="card-body">
+                <input class=" w-50" type="email" name="" placeholder="Inserisci pure qui la tua mail..."
+                    id="emailInvite">
+            </div>
+
+            <div class="card-footer">
+                <button class="w-25" type="submit" onclick="sendemail()">Invia</button>
+            </div>
+        </div>
+
+
+        <div class="ValidOk d-none text-center">
+
+            <div class="container my-3 card text-center">
+
+                <div class="card-header mt-2 bg-success">
+                    <p class="text-uppercase text-white my-3">La mail è valida</p>
+                </div>
+
+                <div class="card-body bg-primary">
+
+                    <button type="button" class="validation btn btn-success" onclick="playIt()">Ora puoi Giocare a dadi!
+                        Se vinco contro di
+                        me, entri gratis!
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div>
+                <div>
+                    <p class="you"></p>
+                </div>
+
+                <div>
+                    <p class="computer"></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="ValidNot d-none text-center">
+
+            <div class="container bg-white my-3 card text-center">
+
+                <div class="card-header bg-danger">
+                    <p class="text-uppercase text-white my-3">La mail non è valida</p>
+                </div>
+
+                <div class="card-body bg-white">
+
+                    <button type="button" class="refreshit btn btn-danger" onclick="turnback ()">Riprova</button>
+                    <button type="button" class="submitIt btn btn-info my-1" onclick="pullIt ()">Inseriscila</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
