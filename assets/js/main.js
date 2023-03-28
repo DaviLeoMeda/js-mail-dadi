@@ -28,9 +28,7 @@ function sendemail() {
     if (validazione == true) {
         console.log("email valida");
         document.querySelector(".ValidOk").classList.toggle('d-none');
-        function playIt() {
-            document.querySelector("you").innerHTML = "
-        }
+
     } else {
         console.log("email non valida");
         document.querySelector(".ValidNot").classList.toggle('d-none');
@@ -45,15 +43,38 @@ function sendemail() {
 
 }
 
+function randomNumber(max, min) {
+    return Math.floor(Math.random() * max) + min;
+}
+
 function playIt() {
-    return Math.floor(Math.random() * 10) + 1;
-    console.log(playIt());
-}
+    let cpu = randomNumber(10, 1);
+    let human = randomNumber(10, 1);
+    console.log(cpu, human);
 
-function turnback() {
-    window.location.reload()
-}
+    document.querySelector(".pc").innerHTML = `<p>${cpu}</p>`;
+    document.querySelector(".yours").innerHTML = `<p>${human}</p>`;
 
+    if (cpu == human) {
+        document.querySelector(".winner").innerHTML = `Pareggio!!!`
+        document.querySelector(".pc").element.classList.add("bg-primary");
+        document.querySelector(".yours").element.classList.add("bg-primary");
+    } else if (cpu > human) {
+        document.querySelector(".winner").innerHTML = `Ha vinto il computer e tu paghi`
+        document.querySelector(".pc").element.classList.add("bg-success");
+        document.querySelector(".yours").element.classList.add("bg-primary");
+
+    } else if (cpu < human) {
+        document.querySelector(".winner").innerHTML = `Hai vinto tu! Serata gratis!`
+        document.querySelector(".pc").element.classList.add("bg-primary");
+        document.querySelector(".yours").element.classList.add("bg-success");
+
+    }
+
+    function turnback() {
+        window.location.reload()
+    }
+}
 
 // function randomNumberWagon(min, max) {
 //     return Math.floor(Math.random() * max) + min;
